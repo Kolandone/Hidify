@@ -29,5 +29,6 @@ else
 fi
 
 # Print the result
+echo -e "\e[32myoutube:Kolandone\e[0m"
 echo "Your hidify config:"
 echo "$link"
