@@ -38,9 +38,9 @@ read -p "Insert your license: " license
 
 # Generate links based on the provided information
 if [[ -z "$license" ]]; then
-  link="warp://${ipclean}?fp=10-20&ifps=20-60&ifp=5-10#Iran&&detour=warp://${ipclean}?ifp=10-20&ifps=20-60&ifp=5-10#Germany"
+  link="warp://${ipclean}?ifp=5-10#Iran&&detour=warp://${ipclean}?ifp=5-10#Germany"
 else
-  link="warp://${license}@${ipclean}?fp=10-20&ifps=20-60&ifp=5-10#Iran&&detour=warp://${ipclean}?ifp=10-20&ifps=20-60&ifp=5-10#Germany"
+  link="warp://${license}@${ipclean}?ifp=5-10#Iran&&detour=warp://${ipclean}?ifp=5-10#Germany"
 fi
 
 # Print the result
