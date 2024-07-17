@@ -18,7 +18,6 @@ fetch_ip() {
 # Initialize variables
 ipv4=""
 ipv6=""
-ipclean=""
 
 # Fetch the IP address based on the user's choice
 if [ "$user_choice" == "1" ]; then
@@ -44,26 +43,9 @@ elif [ "$user_choice" == "2" ]; then
     echo "Failed to fetch a valid IPv4 address. Exiting..."
     exit 1
   fi
-  
-  # Concatenate IPv6 and IPv4 addresses
-  ipclean="$ipv6;$ipv4"
 else
   echo "Invalid choice. Exiting..."
   exit 1
-fi
-
-# Check if we got a valid IP address
-if [[ -z "$ipclean" ]]; then
-  ipclean="$ipv4"
-  if [[ -z "$ipclean" ]]; then
-    echo "Failed to fetch a valid IP address. Exiting..."
-    exit 1
-  fi
-fi
-
-# Prompt user for warp clean IP and port if not set by the install script
-if [[ -z "$ipclean" ]]; then
-  read -p "Insert your warp clean IP and port: " ipclean
 fi
 
 # Prompt user for license
@@ -71,9 +53,9 @@ read -p "Insert your license: " license
 
 # Generate links based on the provided information
 if [[ -z "$license" ]]; then
-  link="warp://${ipclean}?ifp=5-10&&detour=warp://${ipclean}?ifp=5-10"
+  link="warp://${ipv6}?ifp=10-20&ifps=20-60&ifp=5-10#Iran&&detour=warp://${ipv4}?ifp=10-20&ifps=20-60&ifp=5-10#Germany"
 else
-  link="warp://${license}@${ipclean}?ifp=5-10&&detour=warp://${license}@${ipclean}?ifp=5-10"
+  link="warp://${license}@${ipv6}?ifp=10-20&ifps=20-60&ifp=5-10#Iran&&detour=warp://${ipv4}?ifp=10-20&ifps=20-60&ifp=5-10#Germany"
 fi
 
 # Print the result
