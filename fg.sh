@@ -8,9 +8,9 @@ fetch_ip() {
   local choice=$1
   local ip
   if [ "$choice" == "1" ]; then
-    ip=$(echo "1" | bash <(curl -fsSL https://raw.githubusercontent.com/Kolandone/V2/main/installr.sh) | grep -oP '(\d{1,3}\.){3}\d{1,3}:\d+' | head -n 1)
+    ip=$(echo "1" | bash <(curl -fsSL https://raw.githubusercontent.com/Ptechgithub/warp/main/endip/install.sh) | grep -oP '(\d{1,3}\.){3}\d{1,3}:\d+' | head -n 1)
   elif [ "$choice" == "2" ]; then
-    ip=$(echo "2" | bash <(curl -fsSL https://raw.githubusercontent.com/Kolandone/V2/main/installr.sh) | grep -oP '(\[?[a-fA-F\d:]+\]?\:\d+)' | head -n 1)
+    ip=$(echo "2" | bash <(curl -fsSL https://raw.githubusercontent.com/Ptechgithub/warp/main/endip/install.sh) | grep -oP '(\[?[a-fA-F\d:]+\]?\:\d+)' | head -n 1)
   fi
   echo "$ip"
 }
@@ -57,7 +57,7 @@ if [ "$user_choice" == "1" ]; then
   if [[ -z "$license" ]]; then
     link="warp://${ipv4}?ifp=10-20&ifps=20-60&ifp=5-10#Iran&&detour=warp://${ipv4}?ifp=10-20&ifps=20-60&ifp=5-10#Germany"
   else
-    link="warp://${license}@${ipv4}?ifp=10-20&ifps=20-60&ifp=5-10#Iran&&detour=warp://${license}@${ipv4}?ifp=10-20&ifps=20-60&ifp=5-10#Germany"
+    link="warp://${license}@${ipv4}?ifp=10-20&ifps=20-60&ifp=5-10#Iran&&detour=warp://${ipv4}?ifp=10-20&ifps=20-60&ifp=5-10#Germany"
   fi
 else
   # Use IPv6 address for the primary part and IPv4 address for the detour part
