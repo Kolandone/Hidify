@@ -8,10 +8,8 @@ fetch_ip() {
   local choice=$1
   local ip
   if [ "$choice" == "1" ]; then
-    echo "Fetching IPv4 address from install.sh..."
     ip=$(echo "1" | bash <(curl -fsSL https://raw.githubusercontent.com/Kolandone/V2/main/installr.sh) | grep -oP '(\d{1,3}\.){3}\d{1,3}:\d+' | head -n 1)
   elif [ "$choice" == "2" ]; then
-    echo "Fetching IPv6 address from install.sh..."
     ip=$(echo "2" | bash <(curl -fsSL https://raw.githubusercontent.com/Kolandone/V2/main/installr.sh) | grep -oP '(\[?[a-fA-F\d:]+\]?\:\d+)' | head -n 1)
   fi
   echo "$ip"
@@ -20,13 +18,16 @@ fetch_ip() {
 # Initialize variables
 ipv4=""
 ipv6=""
+ipclean=""
 
 # Fetch the IP address based on the user's choice
 if [ "$user_choice" == "1" ]; then
   ipv4=$(fetch_ip 1)
+  echo "Fetched IPv4 address: $ipv4"
 elif [ "$user_choice" == "2" ]; then
   # First fetch IPv6 address
   ipv6=$(fetch_ip 2)
+  echo "Fetched IPv6 address: $ipv6"
   
   # Check if a valid IPv6 address was fetched
   if [[ -z "$ipv6" ]]; then
@@ -36,6 +37,7 @@ elif [ "$user_choice" == "2" ]; then
   
   # Then fetch IPv4 address
   ipv4=$(fetch_ip 1)
+  echo "Fetched IPv4 address: $ipv4"
   
   # Check if a valid IPv4 address was fetched
   if [[ -z "$ipv4" ]]; then
@@ -52,8 +54,11 @@ fi
 
 # Check if we got a valid IP address
 if [[ -z "$ipclean" ]]; then
-  echo "Failed to fetch a valid IP address. Exiting..."
-  exit 1
+  ipclean="$ipv4"
+  if [[ -z "$ipclean" ]]; then
+    echo "Failed to fetch a valid IP address. Exiting..."
+    exit 1
+  fi
 fi
 
 # Prompt user for warp clean IP and port if not set by the install script
