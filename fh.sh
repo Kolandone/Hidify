@@ -17,20 +17,24 @@ fetch_ip() {
   echo "$ip"
 }
 
+# Initialize variables
+ipv4=""
+ipv6=""
+
 # Fetch the IP address based on the user's choice
 if [ "$user_choice" == "1" ]; then
-  ipclean=$(fetch_ip 1)
+  ipv4=$(fetch_ip 1)
 elif [ "$user_choice" == "2" ]; then
   # First fetch IPv6 address
-  ipclean=$(fetch_ip 2)
+  ipv6=$(fetch_ip 2)
   
   # Check if a valid IPv6 address was fetched
-  if [[ -z "$ipclean" ]]; then
+  if [[ -z "$ipv6" ]]; then
     echo "Failed to fetch a valid IPv6 address. Exiting..."
     exit 1
   fi
   
-  # Then fetch IPv4 address and append to ipclean
+  # Then fetch IPv4 address
   ipv4=$(fetch_ip 1)
   
   # Check if a valid IPv4 address was fetched
@@ -39,8 +43,8 @@ elif [ "$user_choice" == "2" ]; then
     exit 1
   fi
   
-  # Append the IPv4 address
-  ipclean="$ipclean;$ipv4"
+  # Concatenate IPv6 and IPv4 addresses
+  ipclean="$ipv6;$ipv4"
 else
   echo "Invalid choice. Exiting..."
   exit 1
