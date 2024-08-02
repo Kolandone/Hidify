@@ -80,7 +80,7 @@ else
 	link4="warp://p1@${ipv6}ifp=1-3&ifps=10-20&ifpd=5-10&ifpm=m4#m4&&detour=warp://p2@${ipv4}#WoW"
 	link5="warp://p1@${ipv6}ifp=1-3&ifps=10-20&ifpd=5-10&ifpm=m5#m5&&detour=warp://p2@${ipv4}#WoW"
 	link6="warp://p1@${ipv6}ifp=1-3&ifps=10-20&ifpd=5-10&ifpm=m6#m6&&detour=warp://p2@${ipv4}#WoW"
-	link7="warp://p1@{ipv6}?ifp=1-3&ifps=10-20&ifpd=5-10&ifpm=h_30#hex&&detour=warp://p2@{ipv4}#WoW"
+	link7="warp://p1@${ipv6}?ifp=1-3&ifps=10-20&ifpd=5-10&ifpm=h_30#hex&&detour=warp://p2@${ipv4}#WoW"
   else
     link1="warp://${license}@${ipv6}ifp=1-3&ifps=10-20&ifpd=5-10&ifpm=m1#m1&&detour=warp://p2@${ipv4}#WoW"
 	link2="warp://${license}@${ipv6}ifp=1-3&ifps=10-20&ifpd=5-10&ifpm=m1#m1&&detour=warp://p2@${ipv4}#WoW"
@@ -88,7 +88,7 @@ else
 	link4="warp://${license}@${ipv6}ifp=1-3&ifps=10-20&ifpd=5-10&ifpm=m1#m1&&detour=warp://p2@${ipv4}#WoW"
 	link5="warp://${license}@${ipv6}ifp=1-3&ifps=10-20&ifpd=5-10&ifpm=m1#m1&&detour=warp://p2@${ipv4}#WoW"
 	link6="warp://${license}@${ipv6}ifp=1-3&ifps=10-20&ifpd=5-10&ifpm=m1#m1&&detour=warp://p2@${ipv4}#WoW"
-	link7="warp://${license}@{ipv6}?ifp=1-3&ifps=10-20&ifpd=5-10&ifpm=h_30#hex&&detour=warp://p2@{ipv4}#WoW"
+	link7="warp://${license}@${ipv6}?ifp=1-3&ifps=10-20&ifpd=5-10&ifpm=h_30#hex&&detour=warp://p2@${ipv4}#WoW"
   fi
 fi
 
