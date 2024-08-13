@@ -115,7 +115,7 @@ elif [ "$user_choice" == "2" ]; then
 	link7="warp://${license}@${ipv6}?ifp=1-3&ifps=10-20&ifpd=5-10&ifpm=h_30#hex&&detour=warp://p2@${ipv4}#WoW"
    fi
   fi
-  elif [ "$user_choice" == "3" ]; then
+  else
   # Use IPv4 address for both parts of the link
   if [[ -z "$license" ]]; then
     link1="warp://p1@${ipv4}ifp=1-3&ifps=10-20&ifpd=5-10&ifpm=m1#m1&&detour=warp://p2@${ipv41}#WoW"
@@ -133,7 +133,7 @@ elif [ "$user_choice" == "2" ]; then
 	link5="warp://${license}@${ipv4}?ifp=1-3&ifps=10-20&ifpd=5-10&ifpm=m1#m1&&detour=warp://p2@${ipv41}#WoW"
 	link6="warp://${license}@${ipv4}?ifp=1-3&ifps=10-20&ifpd=5-10&ifpm=m1#m1&&detour=warp://p2@${ipv41}#WoW"
 	link7="warp://${license}@${ipv4}??ifp=1-3&ifps=10-20&ifpd=5-10&ifpm=h_30#hex&&detour=warp://p2@${ipv41}#WoW"
-   fi
+   
  fi
 fi
 
