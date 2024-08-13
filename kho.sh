@@ -30,7 +30,7 @@ elif [ "$user_choice" == "2" ]; then
   # First fetch IPv6 address
   ipv6=$(fetch_ip 2)
   echo "Fetched IPv6 address: $ipv6"
-  
+ fi 
   # Check if a valid IPv6 address was fetched
   if [[ -z "$ipv6" ]]; then
     echo "Failed to fetch a valid IPv6 address. Exiting..."
@@ -46,12 +46,12 @@ elif [ "$user_choice" == "2" ]; then
     echo "Failed to fetch a valid IPv4 address. Exiting..."
     exit 1
    fi  
-elif [ "$user_choice" == "3" ]; then
+if [ "$user_choice" == "3" ]; then
   # First fetch IPv4 address
   ipv4=$(fetch_ip 1)
   echo "Fetched IPv4 address: $ipv4"
-  
-  # Check if a valid IPv6 address was fetched
+fi
+  # Check if a valid IPv4 address was fetched
   if [[ -z "$ipv4" ]]; then
     echo "Failed to fetch a valid IPv4 address. Exiting..."
     exit 1
@@ -61,7 +61,7 @@ elif [ "$user_choice" == "3" ]; then
   ipv41=$(fetch_ip 3)
   echo "Fetched IPv4 address: $ipv41"
   
-  # Check if a valid IPv4 address was fetched
+  # Check if a valid IPv41 address was fetched
   if [[ -z "$ipv41" ]]; then
     echo "Failed to fetch a valid IPv4 address. Exiting..."
     exit 1
