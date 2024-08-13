@@ -11,6 +11,8 @@ fetch_ip() {
     ip=$(echo "1" | bash <(curl -fsSL https://raw.githubusercontent.com/Kolandone/Selector/main/Sel.sh) | grep -oP '(\d{1,3}\.){3}\d{1,3}:\d+' | head -n 1)
   elif [ "$choice" == "2" ]; then
     ip=$(echo "2" | bash <(curl -fsSL https://raw.githubusercontent.com/Kolandone/Selector/main/Sel.sh) | grep -oP '(\[?[a-fA-F\d:]+\]?\:\d+)' | head -n 1)
+  elif [ "$choice" == "3" ]; then
+    ip=$(echo "1" | bash <(curl -fsSL https://raw.githubusercontent.com/Kolandone/Selector/main/Sel.sh) | grep -oP '(\d{1,3}\.){3}\d{1,3}:\d+' | head -n 1)  
   fi
   echo "$ip"
 }
@@ -56,7 +58,7 @@ elif [ "$user_choice" == "2" ]; then
   fi
   
   # Then fetch IPv4 address
-  ipv41=$(fetch_ip 1)
+  ipv41=$(fetch_ip 3)
   echo "Fetched IPv4 address: $ipv41"
   
   # Check if a valid IPv4 address was fetched
