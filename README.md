@@ -12,3 +12,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Kolandone/Selector/main/Sel.
 ```
 ---
 ## بعد از نصب اولیه برای گزینه ۴ میتونید هربار برای اجرا و کانفیگ گرفتن از دستور KOLAND با حروف بزرگ استفاده کنید و برای گزینه ۶ از دستور KOL با حروف بزرگ استفاده کنید.
+---
+
+## آموزش کامل اسکریپت سلکتور :
+[آموزش اسکربپت سلکتور](https://youtu.be/YWvv-ChtIXQ?si=XYjMQqxWWQfdzVcq)
