@@ -8,11 +8,10 @@
 ---
 ### برای نصب اسکریپت میتونید از گزینه ۴ و ۶ اسکریپت سلکتور استفاده کنید :
 ```
-bash <(curl -fsSL https://raw.githubusercontent.com/Kolandone/Selector/main/Sel.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/Selector/main/Sel.sh)
 ```
 ---
 ## بعد از نصب اولیه برای گزینه ۴ میتونید هربار برای اجرا و کانفیگ گرفتن از دستور KOLAND با حروف بزرگ استفاده کنید و برای گزینه ۶ از دستور KOL با حروف بزرگ استفاده کنید.
 ---
 
-## آموزش کامل اسکریپت سلکتور :
-[آموزش اسکربپت سلکتور](https://youtu.be/YWvv-ChtIXQ?si=XYjMQqxWWQfdzVcq)
+
